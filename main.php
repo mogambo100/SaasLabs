@@ -74,7 +74,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<title></title>
 </head>
 <body>
@@ -82,10 +84,10 @@
 	<span>Please select a option to Automate</span>
 	<br><br><br>
 	<form action="" method="post">
-		<input type="submit" name="command" value="message">&nbsp;
-		<input type="submit" name="command" value="call">&nbsp;
-		<input type="submit" name="command" value="Appointment">&nbsp;
-		<input type="submit" name="command" value="Reset">&nbsp;
+		<input type="submit" name="command" value="message" class="btn btn-primary">&nbsp;
+		<input type="submit" name="command" value="call" class="btn btn-success">&nbsp;
+		<input type="submit" name="command" value="Appointment" class="btn btn-info">&nbsp;
+		<input type="submit" name="command" value="Reset" class="btn btn-warning">&nbsp;
 	</form>
 	<?php if($typeOfAutomation=="message" or $flag=="message") { ?>
 		<br><br><br>
@@ -98,7 +100,7 @@
 				<span>To: </span><input type="text" name="to" placeholder="1234567890" value="<?php echo $value["to"] ?>"><br><br>
 				<span>Date: </span><input type="date" name="date" value="<?php echo date("Y-m-d"); ?>"><br><br><br><br><br>
 				
-				<input type="submit" name="message" value="Submit"><br>
+				<input type="submit" name="message" value="Submit" class="btn btn-success"><br>
 			</form>
 		</fieldset>
 	<?php } elseif($typeOfAutomation=="call" or $flag=="call") {?>
@@ -112,7 +114,7 @@
 				<span>To: </span><input type="text" name="to" placeholder="1234567890" value="<?php echo $value["to"] ?>"><br><br>
 				<span>Date: </span><input type="date" name="date" value="<?php echo date("Y-m-d"); ?>" ><br><br><br><br><br>
 				<span>Duration: </span><input type="text" name="duration" placeholder="No of Mins" value="<?php echo $value["duration"] ?>"><br><br>
-				<input type="submit" name="call" value="Submit"><br>
+				<input type="submit" name="call" value="Submit" class="btn btn-success"><br>
 			</form>
 		</fieldset>
 
@@ -126,7 +128,7 @@
 				
 				<span>Date: </span><input type="date" name="date" value="<?php echo date("Y-m-d"); ?>" ><br><br><br>
 				<span>Email: </span><input type="email" name="email" placeholder="Email Address" value="<?php echo $value["email"] ?>"><br><br>
-				<input type="submit" name="appointment" value="Submit"><br>
+				<input type="submit" name="appointment" value="Submit" class="btn btn-success"><br>
 			</form>
 		</fieldset>
 

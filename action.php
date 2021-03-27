@@ -72,6 +72,9 @@
 
 <html>
 <head>
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 	<script type="text/javascript">
 		document.getElementByID("goback").onclick=function(){
 			document.location.href='/main.php';
@@ -81,14 +84,21 @@
 </head>
 <body>
 	<form action="" method="POST">
-		<input type="submit" name="sqlFetch" value="all">&nbsp;
-		<input type="submit" name="sqlFetch" value="message">&nbsp;
-		<input type="submit" name="sqlFetch" value="call">&nbsp;
-		<input type="submit" name="sqlFetch" value="appointment">&nbsp;
+		<input type="submit" name="sqlFetch" value="all" class="btn btn-success">&nbsp;
+		<input type="submit" name="sqlFetch" value="message" class="btn btn-primary">&nbsp;
+		<input type="submit" name="sqlFetch" value="call" class="btn btn-info">&nbsp;
+		<input type="submit" name="sqlFetch" value="appointment" class="btn btn-warning">&nbsp;
 	</form>
+
+	<input type="submit" name="Go Back" value="Go Back to Main Page" id="goback" onClick="myFunction()" class="btn btn-info" ><br>
+	<script type="text/javascript">
+		function myFunction(){
+			window.location.href="main.php";
+		}
+	</script>
 	<br><br>
 	<?php if(isset($_POST['sqlFetch'])){ ?>
-	<table>
+	<table class="table table-hover">
 		<tr>
 				<th>SNo.</th>
 				<th>Type</th>
@@ -136,12 +146,6 @@
 		
 	</table>
 	<?php } ?>
-	<br><br><br>
-	<input type="submit" name="Go Back" value="Go Back to Main Page" id="goback" onClick="myFunction()" ><br>
-	<script type="text/javascript">
-		function myFunction(){
-			window.location.href="main.php";
-		}
-	</script>
+	
 </body>
 </html>
